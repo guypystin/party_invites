@@ -1,0 +1,25 @@
+﻿@model partyInvites06.Models.GuestResponse
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/css/styles.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Форма учатника</title>
+</head>
+<body class="container text-center ">
+    <h1>Спасибо за участие, @Model.Name !</h1>
+    @if (Model.WillAttend == true)
+    {
+
+        <div class="h3">Перед событием мы оповестим тебя на email - @Model.Email</div>
+    }
+    @if (Model.WillAttend == false)
+    {
+        @: Жалко, что ты не сможешь придти(
+    }
+    <p class="h4 mt-5"> Нажми <a asp-action="ListResponses">Здесь</a> чтобы увидеть список всех, кто придет</p>
+</body>
+</html>

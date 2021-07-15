@@ -1,0 +1,40 @@
+﻿@model partyInvites06.Models.GuestResponse
+@{
+    Layout = null;
+}
+<link rel="stylesheet" href="~/css/styles.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Форма учатника</title>
+</head>
+<body>
+    <form asp-action="RspvForm" method="post" class="container">
+        <div asp-validation-summary="All" class="alert-danger danger rspv-danger"></div>
+        <p class="form-group">
+            <label for="exampleInputEmail1" asp-for="Name">Твое имя:</label>
+            <input class="form-control" asp-for="Name" />
+        </p>
+        <p class="form-group">
+            <label for="exampleInputEmail1" asp-for="Email">Твоя почта:</label>
+            <input class="form-control" asp-for="Email" />
+        </p>
+        <p class="form-group">
+            <label for="exampleInputEmail1" asp-for="Phone">Твой телефон:</label>
+            <input class="form-control" asp-for="Phone" />
+        </p>
+        <p>
+            <label asp-for="WillAttend">
+                <select class="form-select form-select-lg mb-3" asp-for="WillAttend">
+                    <option value="">Ты учавствуешь?</option>
+                    <option value="true">Да</option>
+                    <option value="false">Нет</option>
+                </select>
+            </label>
+        </p>
+        <button class="btn btn-success" type="submit">Отправить форму на обработку</button>
+        <a asp-action="Index" class="btn btn-danger">Вернуться на главную</a>
+    </form>
+    
+</body>
+</html>
